@@ -1,0 +1,375 @@
+/* 1. Ensure body fills full screen height and uses flex column */
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+  background-color: yellow;
+}
+
+/* 2. Main content grows to push footer down */
+main {
+  flex: 1;
+}
+header {
+      background-color: #1a1a1a;
+  color: #ffffff;
+}
+
+/* 3. Base footer styling */
+footer {
+  background-color: #1a1a1a;
+  color: #ffffff;
+  padding: 2rem 1rem;
+  text-align: center;
+}
+.middle-content {
+    width: 100%;
+}
+
+.middle-content .card {
+    width: 100%;
+}
+
+
+/* Base ball */
+.ball {
+    position: relative;
+    overflow: hidden;
+
+    width: 45px;
+    height: 45px;
+    margin: 6px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    font-weight: bold;
+    color: white;
+
+    border: 2px solid rgba(0, 0, 0, 0.2);
+
+    box-shadow:
+        inset -6px -8px 10px rgba(0, 0, 0, 0.35),
+        inset 5px 5px 8px rgba(255, 255, 255, 0.7),
+        0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+
+/* BALL 1 = YELLOW */
+#ball1-probabilities .ball {
+    background: radial-gradient(
+        circle at 30% 25%,
+        #ffffff 0%,
+        #fff59d 10%,
+        #ffeb3b 30%,
+        #fbc02d 65%,
+        #c49000 100%
+    );
+}
+
+
+/* BALL 2 = GREEN */
+#ball2-probabilities .ball {
+    background: radial-gradient(
+        circle at 30% 25%,
+        #ffffff 0%,
+        #a5d6a7 10%,
+        #4caf50 30%,
+        #2e7d32 65%,
+        #145c19 100%
+    );
+}
+
+
+/* Shine */
+.ball::before {
+    content: "";
+
+    position: absolute;
+    width: 15px;
+    height: 8px;
+
+    top: 6px;
+    left: 8px;
+
+    background: rgba(255, 255, 255, 0.8);
+
+    border-radius: 50%;
+
+    transform: rotate(-35deg);
+}
+
+
+/* Hover */
+.ball:hover {
+    transform: scale(1.08);
+}
+
+.site-footer {
+  background-color: #0f172a;
+  color: #94a3b8;
+  padding: 3rem 1.5rem 1.5rem;
+}
+
+/* Responsive grid layout */
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2.5rem;
+}
+
+.footer-col h3 {
+  color: #f8fafc;
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-col li {
+  margin-bottom: 0.5rem;
+}
+
+.footer-col a {
+  color: #94a3b8;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer-col a:hover {
+  color: #38bdf8;
+}
+
+.footer-bottom {
+  max-width: 1200px;
+  margin: 2.5rem auto 0;
+  padding-top: 1.5rem;
+  border-top: 1px solid #334155;
+  text-align: center;
+  font-size: 0.875rem;
+}
+
+#ball1-probabilities,
+#ball2-probabilities {
+    display: grid !important;
+    grid-template-columns: repeat(6, 1fr) !important;
+    gap: 20px !important;
+    width: 100% !important;
+    padding: 20px !important;
+    box-sizing: border-box !important;
+}
+
+#ball1-probabilities .ball-group,
+#ball2-probabilities .ball-group {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: auto !important;
+    margin: 0 !important;
+}
+
+.ball {
+    width: 45px;
+    height: 45px;
+}
+
+.probability {
+    margin-top: 5px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+/* =====================================
+   TOP 5 BALLS
+   ===================================== */
+
+#top5-ball1,
+#top5-ball2 {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+
+/* =====================================
+   TOP 5 BALL GROUP
+   ===================================== */
+
+.top5-ball-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+/* =====================================
+   YELLOW BALL
+   ===================================== */
+
+.top5-yellow-ball {
+    width: 45px !important;
+    height: 45px !important;
+
+    border-radius: 50% !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    background: #ffeb3b !important;
+
+    color: #000000 !important;
+
+    font-weight: bold;
+
+    border: 2px solid #c49000 !important;
+
+    box-shadow:
+        inset -6px -8px 10px rgba(0, 0, 0, 0.35),
+        inset 5px 5px 8px rgba(255, 255, 255, 0.7),
+        0 4px 8px rgba(0, 0, 0, 0.3) !important;
+}
+
+
+/* =====================================
+   GREEN BALL
+   ===================================== */
+
+.top5-green-ball {
+    width: 45px !important;
+    height: 45px !important;
+
+    border-radius: 50% !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    background: #4caf50 !important;
+
+    color: white !important;
+
+    font-weight: bold;
+
+    border: 2px solid #145c19 !important;
+
+    box-shadow:
+        inset -6px -8px 10px rgba(0, 0, 0, 0.35),
+        inset 5px 5px 8px rgba(255, 255, 255, 0.7),
+        0 4px 8px rgba(0, 0, 0, 0.3) !important;
+}
+
+
+/* =====================================
+   PROBABILITY
+   ===================================== */
+
+.top5-probability {
+    margin-top: 5px;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    color: #555;
+}
+
+
+/* =====================================
+   HOVER
+   ===================================== */
+
+.top5-yellow-ball:hover,
+.top5-green-ball:hover {
+    transform: scale(1.08);
+}
+
+/* =====================================
+   SELECTED BALL HIGHLIGHT
+   ===================================== */
+
+.ball.selected-ball1 {
+    transform: scale(1.15);
+    outline: 4px solid #ff9800 !important;
+    outline-offset: 3px;
+    box-shadow:
+        0 0 0 6px rgba(255, 152, 0, 0.25),
+        inset -6px -8px 10px rgba(0, 0, 0, 0.35),
+        inset 5px 5px 8px rgba(255, 255, 255, 0.7),
+        0 6px 12px rgba(0, 0, 0, 0.4) !important;
+}
+
+.ball.selected-ball2 {
+    transform: scale(1.15);
+    outline: 4px solid #00c853 !important;
+    outline-offset: 3px;
+    box-shadow:
+        0 0 0 6px rgba(0, 200, 83, 0.25),
+        inset -6px -8px 10px rgba(0, 0, 0, 0.35),
+        inset 5px 5px 8px rgba(255, 255, 255, 0.7),
+        0 6px 12px rgba(0, 0, 0, 0.4) !important;
+}
+
+/* =====================================
+   BETTER ODDS
+   ===================================== */
+
+.better-odds {
+    font-weight: bold;
+    margin-left: 10px;
+}
+
+.better-odds.positive {
+    color: #16a34a;
+}
+
+.better-odds.negative {
+    color: #dc2626;
+}
+
+.probability-result {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    margin: 10px 0;
+    flex-wrap: wrap;
+}
+
+.jumbotron-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.game-image {
+    width: 100%;
+    height: 200px;
+    object-fit: contain;
+    display: block;
+}
+
+.donate-image {
+    width: 50%;
+    height: auto;
+    display: block;
+}
+
+.development-image {
+    width: 50%;
+    height: 50%;
+}
